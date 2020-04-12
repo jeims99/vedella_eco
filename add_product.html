@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+
+    {% if user.is_superuser %}
+    <form name="add_product_form" action="/add_product/" method="POST" id="add_product-form" > 
+        {% csrf_token %}
+
+        <h1>Afegir producte</h1>
+        <p>Nom: <input type="text" name="name"></p>
+        <p>Descripció: <input type="text" name="description"></p>
+        <p>Codi: <input type="number" name="code"></p>
+        <p>Preu: <input type="text" name="price"></p>
+        <p>Descompte: <input type="text" name="discount"></p>
+        <p>Disponible: <input type="checkbox" name="available" checked=True></p>
+        <p>Imatge: <input type="image" name="image"></p>
+        <input type="submit" value="Enviar" >
+       
+        {% if error == "add_product_error" %}
+        <div class="alert alert-danger" id="login-form-error">
+            <strong>Error!</strong> Has introduit alguna cosa malament
+        </div>
+        {% elif error == "no_error" %}
+        <div class="alert alert-success"id="ad_product-form-error">
+            <strong>Producte afegit correctament</strong> 
+        </div>
+        {% endif %}
+     </form>
+     
+     
+     {% endif %}
+
+{% endblock %}

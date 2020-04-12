@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+    
+    
+    <form name="contact_form" action="/contact/" method="POST" id="contact-form1"> {% csrf_token %}
+        <h1><strong>Contacte</strong></h1>
+        <p><strong>Asunto:</strong> <input type="text" name="asunto"></p>
+        <p><strong>Email:</strong> <input type="text" name="email"></p>
+        <p><strong>Mensaje:</strong> <textarea name="mensaje" rows="15" cols ="45"></textarea></p>
+        <input action="submit" type="submit" value="Enviar" >
+        {% if send is True %} 
+        <div class="alert alert-success" role="alert">
+            Missatge enviat correctament!
+        </div>
+        {% endif %}
+     </form>
+
+
+{% endblock %}

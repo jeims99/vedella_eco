@@ -1,0 +1,192 @@
+
+/************ 
+//-------------------------------
+// CABECERA
+//-------------------------------
+************/
+#main-header {
+	
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: whitesmoke;
+	color: rgb(59, 136, 20);
+	height: 60px;
+	
+	width: 100%;
+	left: 0;
+	position: sticky;
+}	
+	#main-header a {
+		color: rgb(59, 136, 20);
+	}
+	
+	
+/*
+ * Logo
+ */
+#logo-header {
+	font-family: Arial, Helvetica, sans-serif;
+	float: left;
+	height: 50px;
+	padding-top: 20px;
+	padding-right: 40px;
+	padding-left: 30px;
+	max-height: 50px;
+	text-decoration: none;
+}
+	#logo-header:hover {
+		color: #ffffff;
+	}
+	
+	#logo-header .site-name {
+		display: block;
+		font-weight: 700;
+		font-size: 1.2em;
+	}
+	
+	#logo-header .site-desc {
+		display: block;
+		font-weight: 300;
+		font-size: 0.8em;
+		color: #ffffff;
+	}
+	
+
+/*
+ * Navegación
+ */
+nav {
+	float: right;
+	font-family: Arial, Helvetica, sans-serif;
+	
+}
+	nav ul {
+		margin: 0;
+		padding: 20px;
+		list-style: none;
+		padding-right: 30px;
+	}
+	
+		nav ul li {
+			display: inline-block;
+			line-height: center,center;
+		}
+			
+			nav ul li a {
+				display: block;
+				padding: 0 10px;
+				text-decoration: none;
+			}
+			
+				nav ul li a:hover {
+					background:whitesmoke;
+				}
+	
+
+
+
+/************ 
+//------------------------------
+// CONTENIDO
+//------------------------------
+************/
+#main-content {
+	padding-top: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color:transparent;
+	opacity: 100%;
+	max-width: 1000px;
+	max-height: 800px;
+	
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+
+
+
+/************
+//-----------------------------
+// PIE PÁGINA
+//-----------------------------
+************/
+#main-footer {
+	font-family: Arial, Helvetica, sans-serif;
+	position: relative;
+	background:whitesmoke;
+	color: rgb(59, 136, 20);
+	text-align: center;
+	width: 100%;
+	bottom: 0;
+	height: 50px;
+	padding-top: 10px;
+	max-height: 50px;
+	margin-top: 0px;
+}
+	#main-footer p {
+		margin: 20;
+		
+	}
+	
+	#main-footer a {	
+		color: rgb(59, 136, 20);
+		
+	}
+
+#main-backgroud_image{
+	height: 800px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	
+	background-image: url("https://turisme.pallarssobira.cat/fileadmin/user_upload/1.Descobreix/Farrera/Farrera2.jpg");
+	opacity: 95%;
+
+}
+#contact-form1 {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color:transparent;
+	opacity: 100%;
+	
+	padding-top: 20px;
+	margin-left: 15%;
+	margin-right: 15%;
+	
+}
+#register-form {
+
+	font-family: Arial, Helvetica, sans-serif;
+	background-color:transparent;
+	padding-top: 20px;
+	padding-left: 20px;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+#login-form {
+
+	font-family: Arial, Helvetica, sans-serif;
+	background-color:transparent;
+	padding-top: 20px;
+	padding-left: 20px;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+#register-form-error{
+	width: 40%;
+}
+#register-form-username{
+	display: flex;
+}
+#register-form-first_name{
+	display: flex;
+}
+#register-form-last_name{
+	display: flex;
+}
+#register-form-email{
+	display: flex;
+}
+#register-form-password{
+	display: flex;
+}
+#register-form-password_repeat{
+	display: flex;
+}

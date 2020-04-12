@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+    
+    <form name="profile_form" action="/profile/" method="POST" id="profile-form" > 
+        {% csrf_token %}
+        <h1>Dades de l'usuari {{user.username}}</h1>
+        <p>Nom:  <input type="text" name="first_name" value={{user.first_name}}></p>
+        <p>Cognom:  <input type="text" name="last_name" value={{user.last_name}}></p>
+        <p>Email:  <input type="text" name="email" value={{user.email}}></p>
+        <p>Nova Contrasenya:  <input type="password" name="password" ></p>
+        <p>Repetir Contrasenya:  <input type="password" name="password_repeat" ></p>
+        <input type="submit" value="Guardar canvis" > 
+        {% if error == "no_error" %}
+        <div class="alert alert-success"id="profile-form-error">
+            <strong>Dades guardades correctament</strong> 
+        </div>
+        {% elif error == "first_name_error" %}
+        <div class="alert alert-danger" id="profile-form-error">
+            <strong>Nom Incorrecte </strong>El nom és incorrecte.
+        </div>
+        {% elif error == "last_name_error" %}
+        <div class="alert alert-danger" id="profile-form-error">
+            <strong>Cognom Incorrecte </strong>El cognom és incorrecte.
+        </div>
+        {% elif error == "email_error" %}
+        <div class="alert alert-danger" id="profile-form-error">
+            <strong>Email Incorrecte </strong>El email es incorrecte o ja existeix.
+        </div>
+        {% elif error == "password_error" %}
+        <div class="alert alert-danger" id="profile-form-error">
+            <strong>Contrasenya Incorrecte </strong>La contrasenya és incorrecte.
+        </div>
+        {% endif %}
+     </form>
+
+
+{% endblock %}

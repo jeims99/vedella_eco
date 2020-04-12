@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<title>Vedella ecologica de Trullàs</title>
+		{% load static %}
+        <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+
+<body>
+	<header id="main-header">
+            
+        <a id="logo-header" href="/">
+            <span class="site-name">Vedella ecologica de Trullàs</span>
+            
+            <!--<img src="https://img2.freepng.es/20180603/yge/kisspng-dairy-cattle-holando-argentino-panda-cow-ox-animaa-hg-5b13901c8888a2.6904656415280087325593.jpg" alt="logo"/>-->
+            
+        </a> <!-- / #logo-header -->
+
+        <nav>
+            <ul>
+                <li><a href="/">Inici</a></li>
+                <li><a href="/store">Botiga</a></li>
+				<li><a href="/about">Història</a></li>
+				<li><a href="/contact">Contacte</a></li>
+				<li><a href="/order">Carro</a></li>
+				<!--TODO if que comprovi si estas logejat, en cas q si, login i register desapareixen i nomes apareix nom usuari-->
+				{% if user.is_authenticated %}
+				<li><a href="/profile">{{user.username}}</a></li>
+				<li><a href="/logout">Logout</a></li>
+				{% else %}
+				<li><a href="/login">Iniciar Sessió</a></li>
+				<li><a href="/register">Registrar-se</a></li>
+				{% endif %}
+            </ul>
+        </nav><!-- / nav -->
+
+	</header><!-- / #main-header -->
+	<div id="main-backgroud_image">
+
+
+	{% block content %}{% endblock %}
+	</div>
+	
+	
+	
+	
+	 <footer id="main-footer">
+		<p>&copy; 2020 <a>cargosoft.com</a></p>
+	</footer> <!-- / #main-footer -->
+
+
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

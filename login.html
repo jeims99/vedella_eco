@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+    {% if user.is_authenticated is False %}
+    <form name="login_form" action="/login/" method="POST" id="login-form" > 
+        {% csrf_token %}
+        <h1>Iniciar sessió</h1>
+        <p>Usuari: <input type="text" name="username"></p>
+        <p>Contrasenya: <input type="password" name="password"></p>
+        <input type="submit" value="Enviar" >
+        <a href="/register">Registrar-me</a>
+        <a href="/change_password">Recupera la constrasenya</a>
+        {% if error == "login_error" %}
+        <div class="alert alert-danger" id="login-form-error">
+            <strong>Error!</strong> Usuari o contrasenya incorrecte
+        </div>
+        {% endif %}
+     </form>
+    {% endif %}
+
+{% endblock %}

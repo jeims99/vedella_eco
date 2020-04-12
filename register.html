@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+    {% if user.is_authenticated is False %}
+    <form name="register-form" action="/register/" method="POST" id="register-form" > 
+        {% csrf_token %}
+        <h1>Registrar-se</h1>
+        <p>Usuari: <input type="text" name="username" id="register-form-username"></p>
+        <p>Nom: <input type="text" name="first_name" id="register-form-first_name"></p>
+        <p>Cognom: <input type="text" name="last_name" id="register-form-last_name"></p>
+        <p>Email: <input type="email" name="email" id="register-form-email"></p>
+        <p>Contrasenya: <input type="password" name="password" id="register-form-password"></p>
+        <p>Repeteix contrasenya: <input type="password" name="password_repeat" id="register-form-password_repeat"></p>
+        <input type="submit" value="Registrar" >
+        <a href="/login">Ja tinc un compte</a>
+        {% if error == "no_error" %}
+        <div class="alert alert-success"id="register-form-error">
+            <strong>Usuari registrat correctament</strong> 
+        </div>
+        {% elif error == "username_error" %}
+        <div class="alert alert-danger" id="register-form-error">
+            <strong>Usuari Incorrecte </strong>El nom d'usuari és incorrecte o ja existeix.
+        </div>
+        {% elif error == "first_name_error" %}
+        <div class="alert alert-danger" id="register-form-error">
+            <strong>Nom Incorrecte </strong>El nom és incorrecte.
+        </div>
+        {% elif error == "last_name_error" %}
+        <div class="alert alert-danger" id="register-form-error">
+            <strong>Cognom Incorrecte </strong>El cognom és incorrecte.
+        </div>
+        {% elif error == "email_error" %}
+        <div class="alert alert-danger" id="register-form-error">
+            <strong>Email Incorrecte </strong>El email es incorrecte o ja existeix.
+        </div>
+        {% elif error == "password_error" %}
+        <div class="alert alert-danger" id="register-form-error">
+            <strong>Contrasenya Incorrecte </strong>La contrasenya és incorrecte.
+        </div>
+        {% endif %}
+     </form>
+    {% endif %}
+
+{% endblock %}
